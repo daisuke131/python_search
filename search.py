@@ -13,11 +13,19 @@ def search():
     source.append(format(word))
     print("リストに存在しなかったので追加しました。")
 
+    # CSV書き込み
+    write_csv(source)
+
 
 def read_csv():
   with open(PATH) as f:
     read_csv_str = f.read()
     return read_csv_str.split(",")
+
+
+def write_csv(source_list):
+  with open(PATH, mode='w') as f:
+    f.write(",".join(source_list))
 
 
 if __name__ == "__main__":
