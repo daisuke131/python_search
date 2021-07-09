@@ -8,7 +8,7 @@ def search():
     print("{}が見つかりました".format(word))
   else:
     source.append(format(word))
-    print("{}は見つかりませんでした".format(word))
+    print("リストに存在しなかったので追加しました。")
 
 
 if __name__ == "__main__":
