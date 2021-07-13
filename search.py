@@ -1,4 +1,4 @@
-PATH = 'csv/character.csv'
+csv_path = 'csv/character.csv'
 
 
 def search():
@@ -8,9 +8,9 @@ def search():
   source = read_csv()
 
   if word in source:
-    print("{}が見つかりました".format(word))
+    print(f"{word}が見つかりました")
   else:
-    source.append(format(word))
+    source.append(word)
     print("リストに存在しなかったので追加しました。")
 
     # CSV書き込み
@@ -18,13 +18,13 @@ def search():
 
 
 def read_csv():
-  with open(PATH) as f:
+  with open(csv_path) as f:
     read_csv_str = f.read()
     return read_csv_str.split(",")
 
 
 def write_csv(source_list):
-  with open(PATH, mode='w') as f:
+  with open(csv_path, mode='w') as f:
     f.write(",".join(source_list))
 
 
